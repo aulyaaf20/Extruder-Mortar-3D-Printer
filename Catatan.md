@@ -7,7 +7,7 @@
 - **Dir_pin**: Pin ini mengontrol arah rotasi motor stepper. Kondisi rendah (low) menggerakkan motor searah jarum jam (misalnya maju), sedangkan kondisi tinggi (high) menggerakkan motor ke arah berlawanan (mundur).
 - **Enable_pin**: Pin ini mengaktifkan atau menonaktifkan driver motor stepper. Dalam kondisi aktif (biasanya logika rendah tergantung driver), motor siap menerima sinyal step dan dir. Jika tidak aktif, motor tidak menerima sinyal gerakan.
 
-    - Tanda seru (!) menunjukkan bahwa logika pin tersebut terbalik. Misalnya, pin PB4 akan menonaktifkan driver dalam kondisi tinggi (high) dan mengaktifkannya dalam kondisi rendah (low).
+    - Tanda seru (!) menunjukkan bahwa logika pin tersebut terbalik. Misalnya, pin PB4 akan menonaktifkan driver dalam kondisi tinggi (high) dan mengaktifkannya dalam kondisi rendah (low). Karena yang dibutuhkan searah jarum jam, maka dir_pinnya tida menggunakan tanda seru (!)
 
 ## Microstepping
 Microstepping digunakan untuk meningkatkan resolusi motor stepper dengan membagi langkah penuh menjadi beberapa langkah kecil. Driver **TMC2209** mendukung hingga 256 microsteps per langkah penuh, namun nilai umum yang digunakan adalah 16 microsteps.
