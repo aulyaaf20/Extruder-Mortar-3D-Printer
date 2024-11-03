@@ -18,12 +18,13 @@ Microstepping digunakan untuk meningkatkan resolusi motor stepper dengan membagi
 Untuk menentukan seberapa jauh filament didorong oleh ekstruder dalam satu putaran penuh dari motor stepper (setelah memperhitungkan gearbox). Rumus yang digunakan:
 
 ```
-rotation_distance = diameter × 3.14
+rotation_distance = diameter_ulir_screw × 3.14
+rotation_distance with gear ratio = hasil rotation_distance / gear_ratio
 ```
 
-Contoh:
-- Diameter keluaran ekstruder = 0.5 cm atau 5 mm
-- Maka, `rotation_distance = 5 mm × 3.14 = 15.7 mm`
+- Diameter ulir screw = 17,14 mm
+- Maka, `rotation_distance = 17,14 mm × 3.14 = 53.83mm
+- Pada motor stepper yang digunakan terdapat **gear_ratio** sehingga rotation_distance = 53,83 / 5,18 = 10,39
 
 ## Full Step Per Rotation
 Motor stepper umum seperti Nema 17 memiliki **200 full steps per rotation**, artinya motor membutuhkan 200 langkah penuh (360 derajat). Setiap full step memutar motor sebesar 1.8 derajat.
