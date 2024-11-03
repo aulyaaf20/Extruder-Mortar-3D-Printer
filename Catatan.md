@@ -24,22 +24,13 @@ rotation_distance with gear ratio = hasil rotation_distance / gear_ratio
 
 - Diameter ulir screw = 17,14 mm
 - Maka, `rotation_distance = 17,14 mm × 3.14 = 53.83mm
-- Pada motor stepper yang digunakan terdapat **gear_ratio** sehingga rotation_distance = 53,83 / 5,18 = 10,39
+- Pada motor stepper yang digunakan terdapat **gear_ratio** sehingga rotation_distance = 53,83 mm / 5,18 = 10,39 mm
 
 ## Full Step Per Rotation
 Motor stepper umum seperti Nema 17 memiliki **200 full steps per rotation**, artinya motor membutuhkan 200 langkah penuh (360 derajat). Setiap full step memutar motor sebesar 1.8 derajat.
 
 ## Gear Ratio
-Rasio roda gigi dari planetary gearbox untuk motor ini adalah **5.18:1**. Rumus untuk menghitung **rotation distance** yang efektif setelah memperhitungkan gearbox:
-
-```
-rotation_distance = rotation_distance_awal ÷ gear_ratio
-```
-
-Contoh:
-```
-rotation_distance = 15.7 mm ÷ 5.18 = 3.03 mm
-```
+Rasio roda gigi dari planetary gearbox untuk motor ini adalah **5.18:1**.
 
 ## Nozzle Diameter dan Filament Diameter
 - **Nozzle_diameter**: 5 mm (WAJIB DIATUR)
@@ -58,7 +49,7 @@ Jika diameter nozzle 5 mm, maka max extrude cross section sebesar 100 mm².
 Membatasi panjang maksimum gerakan ekstrusi atau retraksi dalam satu perintah. Nilai yang diatur pada klipper:
 
 ```
-max_extrude_only_distance: 100.0
+max_extrude_only_distance: 1500.0
 ```
 
 ## Max Extrude Only Velocity
@@ -86,10 +77,10 @@ max_extrude_only_accel: 200.0
 - **Uart_address**: Setiap driver memiliki alamat UART unik. Contoh, ekstruder menggunakan `uart_address: 3`.
 
 ## Run Current
-Arus maksimum untuk motor stepper selama operasi, dinyatakan dalam ampere. Arus maksimum pada motor ini adalah **1.7 Ampere**, dengan pengaturan awal arus `run_current` pada 1.2-1.4A:
+Arus maksimum untuk motor stepper selama operasi, dinyatakan dalam ampere. Arus maksimum pada motor ini adalah **1.68 Ampere**. Pada run current tidak boleh mendekati arus maksimum karena motor stepper jika digunakan akan menjadi cepat panas.
 
 ```
-run_current: 1.200
+run_current: 0,8
 ```
 
 ## StealthChop Threshold
